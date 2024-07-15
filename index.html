@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -26,13 +27,19 @@
     <!-- BARRA DE NAVEGACION -->
 
     <nav class="navegacion">
-        <ul>
+        <ul id="nav-ul">
             <li><a href="#"><button>Inicio</button></a></li>
             <li><a href="./pages/productos.html"> <button>Productos</button></a></li>
             <li><a href="./pages/servicios.html"> <button>Servicios</button></a></li>
             <li><a href="./pages/nosotros.html"><button>Nosotros</button> </a></li>
             <li><a href="./pages/contacto.html"><button>Contacto</button></a></li>
         </ul>
+
+        <div class="menu-hamburguesa-nav">
+            <a href="javascript:void(0);" class="icono-nav" onclick="toggleNavMenu()">
+                <i id="icon-Hamburguesa-nav" class="fa fa-bars"></i>
+            </a>
+        </div>
     </nav>
 
     <!--ESTO ES EL MAIN  -->
@@ -83,7 +90,7 @@
 
 
     <Footer class="footer">
-        <ul>
+        <ul id="footer-ul">
             <li><a href="#"><button class="button-footer">Inicio</button></a></li>
             <li><a href="./pages/productos.html"> <button class="button-footer">Productos</button></a></li>
             <li><a href="./pages/servicios.html"> <button class="button-footer">Servicios</button></a></li>
@@ -91,7 +98,7 @@
             <li><a href="./pages/contacto.html"><button class="button-footer">Contacto</button></a></li>
         </ul>
         <div class="contenedor-menu-hamburguesa">
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <a href="javascript:void(0);" class="icon" onclick="toggleFooterMenu()">
                 <i id="icon-Hamburguesa" class="fa fa-bars"></i>
             </a>
         </div>
@@ -108,8 +115,17 @@
         </div>
     </Footer>
 
+    <script>
+        function toggleNavMenu() {
+            var navUl = document.getElementById('nav-ul');
+            navUl.classList.toggle('active');
+        }
 
-
+        function toggleFooterMenu() {
+            var footerUl = document.getElementById('footer-ul');
+            footerUl.classList.toggle('active');
+        }
+    </script>
 
 
 </body>
